@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://quizapp-production-8ada.up.railway.app/question/',
+]
+
+
 
 # Application definition
 
