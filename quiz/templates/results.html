@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="question-container text-center">
+        <h1>Quiz Results</h1>
+        
+        <div class="result-message">
+            <p class="correct-answer">Correct Answers: {{ session.correct_answers }}</p>
+            <p class="incorrect-answer">Incorrect Answers: {{ session.incorrect_answers }}</p>
+            <p>Total Score: {{ session.score }} / {{ session.total_questions }}</p>
+            <p><strong>{{ session.score }}</strong> out of <strong>{{ session.total_questions }}</strong> correct answers.</p>
+        </div>
+        
+        <a href="{% url 'quiz:start_quiz' %}" class="btn btn-success btn-lg">Start New Quiz</a>
+    </div>
+{% endblock %}
+
+

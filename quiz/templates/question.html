@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="question-container">
+        <h1 class="text-center">Quiz Question</h1>
+        <h3>{{ question.text }}</h3>
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="answer-option">
+                <input type="radio" id="option_a" name="answer" value="A" required>
+                <label for="option_a">{{ question.option_a }}</label>
+            </div>
+            
+            <div class="answer-option">
+                <input type="radio" id="option_b" name="answer" value="B">
+                <label for="option_b">{{ question.option_b }}</label>
+            </div>
+            
+            <div class="answer-option">
+                <input type="radio" id="option_c" name="answer" value="C">
+                <label for="option_c">{{ question.option_c }}</label>
+            </div>
+            
+            <div class="answer-option">
+                <input type="radio" id="option_d" name="answer" value="D">
+                <label for="option_d">{{ question.option_d }}</label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-submit">Submit Answer</button>
+        </form>
+    </div>
+{% endblock %}
+
+
